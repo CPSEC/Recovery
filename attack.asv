@@ -1,0 +1,4 @@
+function x1 = attack(type,x)
+    if type == 'add'
+    x1 = x - [0.01; 0; 0.01; 0];
+end
