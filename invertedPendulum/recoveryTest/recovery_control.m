@@ -31,10 +31,10 @@ end
 % ranges for the control inputs
 controlPos = n*(k+1);
 for i=1:k
-   A(i+2*n, controlPos+i) = -1;
-   A(i+2*n+k, controlPos+i) = 1;
-   b(i+2*n, 1) = 20;
-   b(i+2*n+k, 1) = 20;
+   A(i+4*n, controlPos+i) = -1;
+   A(i+4*n+k, controlPos+i) = 1;
+   b(i+4*n, 1) = 20;
+   b(i+4*n+k, 1) = 20;
 end
 
 % construct the constraints for the dynamics
@@ -92,10 +92,10 @@ while j <= n*k
     j = j+n;
 end
 
-%Aeq
-%beq
-%A
-%b
+Aeq
+beq
+A
+b
 
 f = ones(1, numOfVars);
 
