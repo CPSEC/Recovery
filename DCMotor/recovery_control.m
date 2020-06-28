@@ -36,8 +36,8 @@ controlPos = n*(k+1);
 for i=1:k
    A(i+4*n, controlPos+i) = -1;
    A(i+4*n+k, controlPos+i) = 1;
-   b(i+4*n, 1) = 20;
-   b(i+4*n+k, 1) = 20;
+   b(i+4*n, 1) = 150;
+   b(i+4*n+k, 1) = 150;
 end
 
 % construct the constraints for the dynamics
@@ -114,10 +114,10 @@ while j <= n*k
 end
 %}
 
-Aeq
-beq
-A
-b
+% Aeq
+% beq
+% A
+% b
 
 f = ones(1, numOfVars);
 
