@@ -2,6 +2,14 @@ function result = recovery_control(A_dyn, B_dyn, k, initial_set_lo, initial_set_
 
 %A_dyn
 %B_dyn
+initial_set_lo
+initial_set_up
+target_set_lo
+target_set_up
+safe_set_lo
+safe_set_up
+control_lo
+control_up
 
 n = size(A_dyn,1);
 
@@ -83,10 +91,10 @@ end
 
 
 
-%Aeq
-%beq
-A
-b
+% Aeq
+% beq
+% A
+% b
 
 f = ones(1, numOfVars);
 
