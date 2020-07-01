@@ -1,4 +1,4 @@
-function result = recovery_control(A_dyn, B_dyn, k, initial_set_lo, initial_set_up, target_set_lo, target_set_up, safe_set_lo, safe_set_up)
+function result = recovery_control(A_dyn, B_dyn, k, initial_set_lo, initial_set_up, target_set_lo, target_set_up, safe_set_lo, safe_set_up, control_up, control_lo)
 
 %A_dyn
 %B_dyn
@@ -50,8 +50,8 @@ startPos = 2*n*(k+1);
 for i=1:k
    A(i+startPos, controlPos+i) = -1;
    A(i+startPos+k, controlPos+i) = 1;
-   b(i+startPos, 1) = 20;
-   b(i+startPos+k, 1) = 20;
+   b(i+startPos, 1) = -control_lo;
+   b(i+startPos+k, 1) = control_up;
 end
 
 % construct the constraints for the dynamics

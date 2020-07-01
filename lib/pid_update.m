@@ -8,6 +8,8 @@ function pid_update(curr_error, dt)
     global prev_error;
     global int_error;
     global control;
+    global control_up;
+    global control_lo;
  
     % integration
     int_error = int_error + (curr_error * dt);
@@ -29,6 +31,12 @@ function pid_update(curr_error, dt)
  
     % summation of terms
     control = p_term + i_term + d_term;
- 
+    % clip on control signal
+    if control > control_up
+        control = control_up;
+    elseif control < control_lo
+        control = control_lo;
+    end
+    
     % save current error as previous error for next iteration
     prev_error = curr_error;
